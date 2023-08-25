@@ -16,7 +16,8 @@ export default function GetData(props){
     let smallIconClass = "inline text-lg ml-1";
     let gridChildClass = "xl:w-full md:w-80 md:w-full hover:scale-105 h-fit p-4 w-72 text-left w-full col-span-1 shadow-md rounded-md bg-gradient-to-br transition-all duration-300 cursor-default";
     let gridLastChildClass = "xl:w-full xl:col-span-1 md:w-80 md:col-span-2 md:w-full hover:scale-105 w-full h-fit p-4 text-left col-span-1 shadow-md rounded-md bg-gradient-to-br transition-all duration-300 cursor-default";
-    let dayClass = "pt-3 mb-3 text-left border-t-2 text-lg border-amber-50"
+    let dayClass = "pt-3 mb-3 text-left text-lg";
+    let hrClass = "border-none h-1";
     let dateClass = "transition-all duration-700 float-right";
     let largeTextClass = "transition-all duration-700 lg:text-5xl p-2 text-4xl text-center font-bold";
     let tableClass = "table table-md bg-gradient-to-tr my-4 mr-0";
@@ -27,39 +28,39 @@ export default function GetData(props){
     //This is for each color plateletes! 
     switch(props.description){
         case 'Clear sky' : 
-            color = ["from-amber-300 to-orange-500" , "shadow-amber-400" , "text-orange-900" , "hover:bg-amber-700" , "hover:text-orange-100" ];
+            color = ["from-amber-300 to-orange-500" , "shadow-amber-400" , "text-orange-900" , "bg-amber-700" , "hover:text-orange-100" ];
             txt = randomText("Sunny");
             break;
         case 'Few clouds' : 
-            color = ["from-amber-200 to-amber-500" , "shadow-amber-400" , "text-amber-900" , "hover:bg-amber-500" , "hover:text-amber-100"];
+            color = ["from-amber-200 to-amber-500" , "shadow-amber-400" , "text-amber-900" , "bg-amber-500" , "hover:text-amber-100"];
             txt = randomText("Cloudy");
             break;
         case 'Scattered clouds' : 
-            color = ["from-slate-200 to-slate-400" ,  "shadow-slate-400" , "text-slate-900" , "hover:bg-slate-400" , "hover:text-slate-100"];
+            color = ["from-slate-200 to-slate-400" ,  "shadow-slate-400" , "text-slate-900" , "bg-slate-400" , "hover:text-slate-100"];
             txt = randomText("Cloudy");
             break;
         case 'Very cloudy' : 
-            color = ["from-gray-400 to-gray-700" , "shadow-gray-700" , "text-gray-100" , "hover:bg-gray-100" , "hover:text-gray-900"];
+            color = ["from-gray-400 to-gray-700" , "shadow-gray-700" , "text-gray-100" , "bg-gray-100" , "hover:text-gray-900"];
             txt = randomText("Cloudy");
             break;
         case 'Few rain' : 
-            color = ["from-cyan-100 to-cyan-400" , " shadow-cyan-400" , "text-cyan-900" , "hover:bg-cyan-500" , "hover:text-cyan-50"];
+            color = ["from-cyan-200 to-cyan-400" , " shadow-cyan-400" , "text-cyan-900" , "bg-cyan-500" , "hover:text-cyan-50"];
             txt = randomText("Rain");
             break;
         case 'Heavy rain' : 
-            color = ["from-cyan-400 to-cyan-700" , "shadow-cyan-700" , "text-cyan-950" , "hover:bg-cyan-700" , "hover:text-cyan-100"];
+            color = ["from-cyan-400 to-cyan-700" , "shadow-cyan-700" , "text-cyan-950" , "bg-cyan-700" , "hover:text-cyan-100"];
             txt = randomText("Rain");
             break;
         case 'Thunderstorm' : 
-            color = ["from-cyan-700 to-cyan-900" , "shadow-cyan-900" , "text-cyan-100" , "hover:bg-cyan-100" , "hover:text-cyan-950"];
+            color = ["from-cyan-700 to-cyan-900" , "shadow-cyan-900" , "text-cyan-100" , "bg-cyan-100" , "hover:text-cyan-950"];
             txt = randomText("Thunder");
             break;
         case 'Snow' : 
-            color = ["from-zinc-200 to-zinc-400" , "shadow-zinc-400" , "text-zinc-900" , "hover:bg-zinc-500" , "hover:text-zinc-100"];
+            color = ["from-zinc-200 to-zinc-400" , "shadow-zinc-400" , "text-zinc-900" , "bg-zinc-500" , "hover:text-zinc-100"];
             txt = randomText("Snow");
             break;
         case 'Mist' : 
-            color = ["from-stone-300 to-stone-500" , "shadow-stone-500" , "text-stone-900" , "hover:bg-stone-500" , "hover:text-stone-100"];
+            color = ["from-stone-300 to-stone-500" , "shadow-stone-500" , "text-stone-900" , "bg-stone-500" , "hover:text-stone-100"];
             txt = randomText("Mist");
             break;
         default :
@@ -94,17 +95,20 @@ export default function GetData(props){
 
         //Assigning each color values 
         headingClass += ` ${color[4]}`;
+        hrClass += ` ${color[3]}`;
+        dayClass += ` ${color[4]}`;
         dateClass += ` ${color[4]}`;
         largeTextClass += ` ${color[4]}`;
         gridChildClass += ` ${color[0]} ${color[1]} ${color[2]}`;
         iconClass += ` ${color[2]}`;
         tableClass += ` ${color[0]}`;
-        tableRowClass += ` ${color[3]} ${color[4]}`;
+        tableRowClass += ` hover:${color[3]} ${color[4]}`;
 
         //returning each grid items, it is pretty easy to understand :> if you do it from scrap:(
         return (
             <div className={gridChildClass}>
                 <p className={headingClass}>{Icon ? Icon:<IoSunnyOutline className={iconClass}/> }{props.description ? props.description : "Sample"} </p>
+                <hr className={hrClass}/>
                 <p className={dayClass}>{props.day ? props.day : "...day"}<span className={dateClass}>{props.date ? props.date : `../../${new Date().getFullYear()}`}</span></p>
                 <p className={largeTextClass}>{props.temp ? props.temp : ".."} &deg; C</p>
                     <table className={tableClass}>
