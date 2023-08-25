@@ -27,7 +27,7 @@ export default function Map(props){
     },[lng , lat]);
     return (
         <>
-            <div className="md:h-96 h-56 min-h-56 min-w-56 max-h-full w-full" ref={mapbox}></div>
+            <div className="md:h-96 md:w-full lg:w-full md:mt-5 md:mb-0 h-56 mt-12 mb-6 rounded-md min-w-fit max-w-full min-h-56 max-h-full" ref={mapbox}></div>
         </>
     )
 }
