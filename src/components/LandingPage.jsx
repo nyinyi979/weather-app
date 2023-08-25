@@ -51,7 +51,7 @@ export default function FirstPage() {
                                 setError(err);
                                 setTimeout(()=>{
                                     window.location.reload();
-                                }, 5000)
+                                }, 7000)
                                 return;
                             }
                             if(data_[0]) setLngV(data_[0]);
