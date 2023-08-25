@@ -16,7 +16,7 @@ export default function getExtractedData(template){
         template.long_description.length = 0;
         template.long_description.push("Heavy rain");
     }
-    else if(template.long_description[0] === "overcast clouds"){
+    else if(template.long_description[0] === "overcast clouds" || template.long_description[0] === "broken clouds"){
         template.long_description.length = 0;
         template.long_description.push("Very cloudy");
     }
