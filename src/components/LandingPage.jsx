@@ -49,6 +49,9 @@ export default function FirstPage() {
                     getLocation((err , data_)=>{
                             if(err) {
                                 setError(err);
+                                setTimeout(()=>{
+                                    window.location.reload();
+                                }, 5000)
                                 return;
                             }
                             if(data_[0]) setLngV(data_[0]);

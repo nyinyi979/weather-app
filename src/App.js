@@ -1,6 +1,5 @@
 import './dist/output.css';
 import FirstPage from './components/LandingPage';
-import SecondPage from './components/WeatherPage';
 function App() {
   return (
     <FirstPage />
