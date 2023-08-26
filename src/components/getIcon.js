@@ -30,10 +30,10 @@ export default function getIcon(description){
             day_night ? icon = <LuCloudy className={iconClass} /> : icon = <RiMoonCloudyFill className={iconClass} />
             break;
         case 'Few rain' :
-            day_night ? icon = <BsCloudRainHeavy className={iconClass} /> : icon = <BsCloudRainHeavyFill className={iconClass} />
+            day_night ? icon = <BsCloudRain className={iconClass} /> : icon = <FaCloudMoonRain className={iconClass} />
             break;
         case 'Heavy rain' :
-            day_night ? icon = <BsCloudRain className={iconClass} /> : icon = <FaCloudMoonRain className={iconClass} />
+            day_night ? icon = <BsCloudRainHeavy className={iconClass} /> : icon = <BsCloudRainHeavyFill className={iconClass} />
             break;
         case 'Thunderstorm' :
             day_night ? icon = <BsCloudLightningRain className={iconClass} /> : icon = <BsCloudLightningRainFill className={iconClass} />
