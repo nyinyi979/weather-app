@@ -1,11 +1,13 @@
 import axios from "axios";
 import getExtractedData from "./getTemplateData";
-
+import {get_marker} from "./Mapbox";
+var lng = 96.1667;
+var lat = 16.7964;
 //Fetching data from openweathermap 
-export default function getWeather(){
+export default function getWeather(lng_ , lat_){
     const api_key = "cbd662cc75ec91bf9f28789abe5144c5";
-    const lng = 96.1667;
-    const lat = 16.7964;
+    lng = get_marker()[0].toFixed(2);
+    lat = get_marker()[1].toFixed(2);
     let weather_data = [ {} , {} , {} , {} , {} ];
     axios({
         url : `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&appid=${api_key}&units=metric`,
