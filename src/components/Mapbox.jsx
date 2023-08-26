@@ -2,6 +2,11 @@ import mapboxgl from "mapbox-gl";
 import '../dist/output.css';
 import { useEffect, useRef } from "react";
 
+let sample_marker = new mapboxgl.Marker().setLngLat([50 , -19])
+//Marker position 
+export function get_marker(){
+    return [sample_marker.getLngLat().lng , sample_marker.getLngLat().lat];
+}
 //Mapbox api 
 export default function Map(props){
     mapboxgl.accessToken = "pk.eyJ1IjoibnlpbnlpLTciLCJhIjoiY2xscmt2ajloMHFtMjNrdGhwMjR4aWl3NyJ9.54yYIBM_beGXdQRsi4grVg";
@@ -22,14 +27,17 @@ export default function Map(props){
                 zoom : 14
             });
         }
-        
-         
+
         marker.current = new mapboxgl.Marker({
             color : "#23452" , 
             draggable : true
         }).setLngLat([lng,lat])
         .setPopup(new mapboxgl.Popup().setHTML("<span>Is this your location?</span>"))
         .addTo(map.current)
+        sample_marker = marker.current;
+        marker.current.on('drag' ,()=>{
+            get_marker();
+        })
     },[lng , lat]);
     return (
         <>
