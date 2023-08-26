@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 //Mapbox api 
 export default function Map(props){
-    mapboxgl.accessToken = "pk.eyJ1IjoibnlpbnlpLTciLCJhIjoiY2xsZmFkamljMG90YTNjcDQxZHZ0cDNkOSJ9.Jd_HOfLe7-xiRZOuqEnwLA";
+    mapboxgl.accessToken = "pk.eyJ1IjoibnlpbnlpLTciLCJhIjoiY2xscmt2ajloMHFtMjNrdGhwMjR4aWl3NyJ9.54yYIBM_beGXdQRsi4grVg";
     var lng = props.lng;
     var lat = props.lat;
     const mapbox = useRef(null);
