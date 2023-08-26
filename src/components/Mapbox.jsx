@@ -11,12 +11,18 @@ export default function Map(props){
     const map = useRef(null);
     const marker = useRef(null);
     useEffect(() => {
-        map.current = new mapboxgl.Map({
-            container: mapbox.current,
-            style: 'mapbox://styles/mapbox/streets-v12',
-            center : [lng , lat], 
-            zoom : 14
-        });
+        if (!mapboxgl.supported()) {
+            alert('Your browser does not support Mapbox GL');
+        } 
+        else {
+            map.current = new mapboxgl.Map({
+                container: mapbox.current,
+                style: 'mapbox://styles/mapbox/streets-v12',
+                center : [lng , lat], 
+                zoom : 14
+            });
+        }
+        
          
         marker.current = new mapboxgl.Marker({
             color : "#23452" , 
