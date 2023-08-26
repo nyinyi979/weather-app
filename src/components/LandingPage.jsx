@@ -24,11 +24,11 @@ export default function FirstPage() {
 
     //First react component to show with the mapbox
     let FirstPage_ = (
-            <div data-theme="retro" className="card container md:max-w-2xl lg:max-w-3xl lg:min-w-max xl:max-w-4xl 2xl:max-w-6xl w-fit max-w-md max-h-fit h-fit animate-fade shadow-md shadow-gray-500 mx-auto my-7 image-full">
+            <div data-theme="retro" className="card container xl:max-w-fit md:max-w-2xl lg:max-w-3xl w-fit max-w-sm max-h-fit animate-fade shadow-md shadow-gray-500 mx-auto my-7 image-full">
                 <figure><img src={bg} className="w-full object-cover opacity-50" alt="bg" /></figure>
                 <div className="card-body">
                     <h2 className='card-title animate-fade_slow text-2xl hover:text-base-200 cursor-default'>Hello , would you love to see your weather?</h2>
-                    <p className='w-full animate-fade_slow text-content-100 opacity-80 h-5 mb-0 hover:text-base-100 cursor-default'>{error}</p>
+                    <p className='w-full animate-fade_slow text-content-100 opacity-80 h-5 mb-0 hover:text-base-100 cursor-default'><span className='text-warning'>{error}</span></p>
                     <Map lng={lngV} lat={latV}/>
                     <div className="card-actions justify-center">
                         <Btn location={location}/>
@@ -56,7 +56,7 @@ export default function FirstPage() {
                             }
                             if(data_[0]) setLngV(data_[0]);
                             if(data_[1]) setLatV(data_[1]);
-                            setError("Location doesn't need to be specific, if you are satisfied , you can click 'Get Weather'")
+                            setError("After allowing location access, please reload ! You can then click 'Get Weather'")
                             setLocation(true);                                         
                     })
                 }} className="btn btn-danger max-w-full">Get your location!</button>

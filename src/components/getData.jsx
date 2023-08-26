@@ -14,7 +14,7 @@ export default function GetData(props){
     let headingClass = "text-xl font-bold text-center mb-2 transition-all duration-700"; 
     let iconClass = "hover:animate-fade_half inline text-4xl mr-3";
     let smallIconClass = "inline text-lg ml-1";
-    let gridChildClass = "xl:w-full md:w-80 md:w-full hover:scale-105 h-fit p-4 w-72 text-left w-full col-span-1 shadow-md rounded-md bg-gradient-to-br transition-all duration-300 cursor-default";
+    let gridChildClass = "xl:w-full md:w-80 md:w-full hover:scale-105 h-fit p-4 w-full text-left col-span-1 shadow-md rounded-md bg-gradient-to-br transition-all duration-300 cursor-default";
     let gridLastChildClass = "xl:w-full xl:col-span-1 md:w-80 md:col-span-2 md:w-full hover:scale-105 w-full h-fit p-4 text-left col-span-1 shadow-md rounded-md bg-gradient-to-br transition-all duration-300 cursor-default";
     let dayClass = "pt-3 mb-3 text-left text-lg";
     let hrClass = "border-none h-1";
