@@ -35,7 +35,7 @@ export default function getWeather(lng_ , lat_){
             //Month starts from 0 , so it is +1 first , '0' is concatenated from front and the whole string is sliced 
             //two character from behind -> to match with the dt_txt obtained from weather data
 
-            let date_to_assign = `${currentDate.getFullYear()}-${('0' + (currentDate.getMonth() + 1) ).slice(-2)}-${currentDate.getDate()}`;
+            let date_to_assign = `${currentDate.getFullYear()}-${('0' + (currentDate.getMonth() + 1) ).slice(-2)}-${('0' + currentDate.getDate() ).slice(-2)}`;
             const dayNames = ["Sunday", "Monday", "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
             obj_template.day = dayNames[currentDate.getDay()];
             obj_template.date = date_to_assign;

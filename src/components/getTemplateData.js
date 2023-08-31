@@ -26,6 +26,7 @@ export default function getExtractedData(template){
 
 //Largest is for higest temperature of the day
 function Largest(list){
+    if(list.length === 0) return; 
     var largest = list[0]; 
     for(var i = 0; i<list.length; i++){
         if(largest < list[i]){
@@ -39,6 +40,7 @@ function Largest(list){
 
 //Smallest is for the lowest temperature of the day
 function Smallest(list){
+    if(list.length === 0) return; 
     var smallest = list[0]; 
     for(var i = 0; i<list.length; i++){
         if(smallest > list[i]){
