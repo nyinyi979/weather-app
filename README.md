@@ -5,6 +5,10 @@ Weather app project
 2. Mapbox
 3. Openweather
 
+## Language used
+- ReactJS
+- Tailwind 
+
 ## Process
 - Show a sample map 
 - Request location after a button click 
