@@ -19,4 +19,6 @@ Weather app project
 - Reload the widget to show the actual data :/
 
 ### Version
-- 1.1 - added functionality to marker 
+- 1.1 - added functionality to marker
+
+Live version of the website can be seen on - https://weather-x9f9.onrender.com/
