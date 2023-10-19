@@ -20,7 +20,7 @@ export default function Map(props){
             alert('Your browser does not support Mapbox GL');
         } 
         else {
-            map.current = new mapboxgl.Map({
+            map = new mapboxgl.Map({
                 container: mapbox.current,
                 style: 'mapbox://styles/mapbox/streets-v12',
                 center : [lng , lat], 
