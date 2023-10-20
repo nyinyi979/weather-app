@@ -56,7 +56,7 @@ export default function FirstPage() {
                             }
                             if(data_[0]) setLngV(data_[0]);
                             if(data_[1]) setLatV(data_[1]);
-                            setError("Move the marker as you want , You can then click 'Get Weather'")
+                            setError("Please, reload after giving access to location for the first time!! You can move the marker!")
                             setLocation(true);                                         
                     })
                 }} className="btn btn-danger max-w-full">Get your location!</button>
