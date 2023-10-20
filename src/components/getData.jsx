@@ -102,7 +102,7 @@ export default function GetData(props){
         gridChildClass += ` ${color[0]} ${color[1]} ${color[2]}`;
         iconClass += ` ${color[2]}`;
         tableClass += ` ${color[0]}`;
-        tableRowClass += ` hover:${color[3]} ${color[4]}`;
+        tableRowClass += ` hover:${color[3]} ${color[4]} ${color[2]}`;
 
         //returning each grid items, it is pretty easy to understand :> if you do it from scrap:(
         return (

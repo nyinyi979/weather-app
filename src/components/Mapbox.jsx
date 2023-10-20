@@ -1,7 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import '../dist/output.css';
 import { useEffect, useRef } from "react";
-
 let sample_marker = new mapboxgl.Marker().setLngLat([50 , -19])
 //Marker position 
 export function get_marker(){
@@ -9,7 +8,7 @@ export function get_marker(){
 }
 //Mapbox api 
 export default function Map(props){
-    mapboxgl.accessToken = "pk.eyJ1IjoibnlpbnlpLTciLCJhIjoiY2xscmt2ajloMHFtMjNrdGhwMjR4aWl3NyJ9.54yYIBM_beGXdQRsi4grVg";
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
     var lng = props.lng;
     var lat = props.lat;
     const mapbox = useRef(null);
@@ -20,7 +19,7 @@ export default function Map(props){
             alert('Your browser does not support Mapbox GL');
         } 
         else {
-            map = new mapboxgl.Map({
+            map.current = new mapboxgl.Map({
                 container: mapbox.current,
                 style: 'mapbox://styles/mapbox/streets-v12',
                 center : [lng , lat], 
