@@ -24,4 +24,4 @@ Weather app project
 ### Version
 - 1.1 - added functionality to marker
 
-Live version of the website can be seen on - https://weather-x9f9.onrender.com/
+Live version of the website can be seen on - https://weather-app-six-omega-77.vercel.app/
