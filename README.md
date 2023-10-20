@@ -24,4 +24,5 @@ Weather app project
 ### Version
 - 1.1 - added functionality to marker
 
+Please, reload after giving access to location for the first time!!
 Live version of the website can be seen on - https://weather-app-six-omega-77.vercel.app/
